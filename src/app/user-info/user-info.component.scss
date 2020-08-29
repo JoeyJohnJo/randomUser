@@ -1,0 +1,93 @@
+$spacing-small: 1vw;
+$spacing-med: 3vw;
+$square: 6vw;
+$red: #fc2a2a;
+$red-darker: #e22323;
+$blue: rgb(43, 146, 243);
+$blue-darker: rgb(33, 36, 187);
+
+@media screen and (max-width: 1170px) {
+  .container, .card {
+    flex-direction: column;
+    align-items: center;
+  }
+  .controls {
+    flex-direction: row !important;
+    justify-content: space-around;
+    border-left: initial !important;
+    border-top: 0.5vw solid $red;
+    padding-left: initial;
+    padding-top: $spacing-small;
+  }
+}
+
+//Referente a div externa que engloba todo o componente
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  margin-bottom:$spacing-med;
+}
+
+//Referente a parte com fundo escuro do componente
+.card {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: $spacing-med;
+  background-color: rgb(233, 233, 233);
+  border-radius: 1%;
+}
+
+img {
+  border-radius: 50%;
+  width: 15vw;
+}
+
+//Referente a div contendo os inputs dentro do card
+.info-container {
+  padding-left: $spacing-med;
+  margin-left: $spacing-med;
+}
+
+//Referente a divs contendo uma info específica. h2 + input
+.info-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+input {
+  margin-left: $spacing-small;
+  background: transparent;
+  border: none;
+  font-size: large;
+}
+
+input:enabled {
+  border-bottom: 0.1vh solid black;
+  background-color: lightblue;
+}
+
+//Referente a div com os botoes de editar e deletar
+.controls {
+  display: flex;
+  flex-direction: column;
+  margin-left: $spacing-small;
+  border-left: 0.5vw solid $red;
+  padding-left: $spacing-small;
+}
+
+button {
+  width: $square;
+  height: $square;
+  margin-bottom: $spacing-small;
+  border: none;
+  color:#fff;
+}
+
+.delete { background-color: $red; }
+.delete:hover { background-color: $red-darker; }
+
+.edit { background-color: $blue; }
+.edit:hover { background-color: $blue-darker;}

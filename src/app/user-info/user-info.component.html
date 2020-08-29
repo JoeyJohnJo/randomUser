@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="card">
+    <img [src]="user.picture.medium">
+    <div class="info-container">
+      <div class="info-row">
+        <h2>{{user.name.title}} </h2>
+        <input [(value)]="user.name.first + ' ' + user.name.last" [disabled]="!editing" #fullName>
+      </div>
+      <div class="info-row">
+        <h2>Email:</h2>
+        <input [(value)]="user.email" type="email" [disabled]="!editing" #email>
+      </div>
+      <div class="info-row">
+        <h2>Phone:</h2>
+        <input [value]="user.cell"  [disabled]="!editing" #cell>
+      </div>
+    </div>
+  </div>
+  <div class="controls">
+    <button class="delete" (click)="deleteUser()">X</button>
+    <button class="edit" (click)="toggleEdit()">
+      {{ editing ? 'Salvar' : 'Editar'}}
+    </button>
+  </div>
+</div>
